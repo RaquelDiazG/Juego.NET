@@ -56,17 +56,38 @@ namespace Juego
             actualizaIU();
         }
 
-        private void mouseUp(object sender, EventArgs e)
-        {
-            //MessageBox.Show("["+((MiBoton)sender).f+ "," + ((MiBoton)sender).c+ "]");
-            tablero.ocultarCarta(((MiBoton)sender).f, ((MiBoton)sender).c);
-            actualizaIU();
-        }
-
         private void mouseDown(object sender, EventArgs e)
         {
             //MessageBox.Show("["+((MiBoton)sender).f+ "," + ((MiBoton)sender).c+ "]");
             tablero.mostrarCarta(((MiBoton)sender).f, ((MiBoton)sender).c);
+            actualizaIU();
+        }
+
+        private void mouseUp(object sender, EventArgs e)
+        {
+            //comprobamos si la carta que se levanta coincide con la siguiente letra de la palabra
+            if (tablero.coincidePosicionPalabra(((MiBoton)sender).f, ((MiBoton)sender).c))
+            {
+                //mostramos la carta
+                tablero.mostrarCarta(((MiBoton)sender).f, ((MiBoton)sender).c);
+                //deshabilitamos el boton
+                ((MiBoton)sender).Enabled = false;
+                //aumentamos el contador para identificar la siguiente letra
+                tablero.aumentarPosicion();
+            }
+            else {
+                //ocultamos todas las cartas y habilitamos todos los botones
+                for (int i = 0; i < numFilas; i++)
+                {
+                    for (int j = 0; j < numColumnas; j++)
+                    {
+                        botones[i, j].Enabled = true;
+                        tablero.ocultarCarta(i,j);
+                    }
+                }
+                //reseteamos el contador
+                tablero.resetearPosicion();
+            }
             actualizaIU();
         }
 
@@ -78,16 +99,6 @@ namespace Juego
                 {
                     //Texto en el boton
                     botones[f, c].Text = tablero.queHayEn(f, c);
-                    /*
-                    if (tablero.queHayEn(f, c).Equals("0"))
-                    {
-                        botones[f - 1, c - 1].Enabled = false;
-                        botones[f - 1, c - 1].Text = "";
-                    }
-                    else if (tablero.queHayEn(f, c).Equals("B"))
-                    {
-                        botones[f - 1, c - 1].Image = global::BuscaminasVentana.Properties.Resources.bomba;
-                    }*/
                 }
             }
         }

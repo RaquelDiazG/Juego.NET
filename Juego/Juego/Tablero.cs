@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Juego
 {
@@ -14,6 +15,7 @@ namespace Juego
         private int puntos;
         private int tiempo;
         public string palabra { get; set; }
+        private string[] letras_palabra;
         private int posicion;
         private string[] abecedario= { "A", "B", "C", "D", "E", "F", "G" };
 
@@ -22,13 +24,15 @@ namespace Juego
             //Iniciamos las variables
             filas = f;
             columnas = c;
+            posicion = 0;
+
             //Creamos el tablero 
             cartas = new Carta[f, c];
 
             //Recuperamos una palabra de BBDD
             palabra = getPalabraBBDD();
             // string[] letras_palabra = palabra.Split(abecedario);
-            string[] letras_palabra = { "S", "A", "L" };
+             letras_palabra = new string[] { "S", "A", "L" };
 
              //Introducimos las letras de la palabra en el tablero
             Random aleatorio = new Random();
@@ -114,5 +118,27 @@ namespace Juego
 	    {
 	        return cartas[f, c].ToString();
 	    }
-}
+
+        public bool coincidePosicionPalabra(int f, int c)
+        {
+            string letra = cartas[f, c].ToString();
+            int posicion_palabra = palabra.IndexOf(letra);
+            return posicion==posicion_palabra;
+        }
+
+        public void aumentarPosicion()
+        {
+            posicion++;
+            //comprobamos si ha ganado
+            if (posicion == palabra.Length)
+            {
+                MessageBox.Show("¡Has ganado!");
+            }
+           
+        }
+        public void resetearPosicion()
+        {
+            posicion = 0;
+        }
+    }
 }
