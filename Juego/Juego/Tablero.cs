@@ -12,7 +12,7 @@ namespace Juego
         private Carta[,] cartas;
         private int filas;
         private int columnas;
-        private int puntos;
+        public int puntos { get; set; }
         private int tiempo;
         public string palabra { get; set; }
         private string[] letras_palabra;
@@ -140,5 +140,11 @@ namespace Juego
         {
             posicion = 0;
         }
+
+        public void aumentarPuntos()
+        {
+            puntos++;
+        }
+
     }
 }

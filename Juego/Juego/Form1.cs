@@ -31,6 +31,9 @@ namespace Juego
             //Mostramos la palabra
             label1.Text = tablero.palabra;
 
+            //Mostramos los puntos
+            label2.Text = "0";
+
             //Rellenamos el layout con botones creados dinamicamente
             this.tableLayoutPanel1.RowCount = numFilas;
             this.tableLayoutPanel1.ColumnCount = numColumnas;
@@ -60,6 +63,8 @@ namespace Juego
         {
             //MessageBox.Show("["+((MiBoton)sender).f+ "," + ((MiBoton)sender).c+ "]");
             tablero.mostrarCarta(((MiBoton)sender).f, ((MiBoton)sender).c);
+            tablero.aumentarPuntos();
+            label2.Text = tablero.puntos.ToString();
             actualizaIU();
         }
 
