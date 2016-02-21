@@ -31,7 +31,7 @@ namespace Juego
             string[] letras_palabra = { "S", "A", "L" };
 
              //Introducimos las letras de la palabra en el tablero
-             Random aleatorio = new Random();
+            Random aleatorio = new Random();
             foreach (string letra in letras_palabra)
             {
                 bool insertada = false;
@@ -88,33 +88,25 @@ namespace Juego
             }
         }
 
-        public void levantar(int f, int c)
+        public void mostrarCarta(int f, int c)
         {
-            //Levantamos la carta
             cartas[f, c].mostrar();
+        }
 
-            /*if (cartas[f, c].num == 0 && cartas[f, c].bomba == false)
-            {
-                for (int i = f - 1; i <= f + 1; i++)
-                {
-                    for (int j = c - 1; j <= c + 1; j++)
-                    {
-                        if (cartas[i, j].levantada == false)
-                        {
-                            levantar(i, j);
-                        }
-                    }
-                }
-            }*/
+        public void ocultarCarta(int f, int c)
+        {
+            cartas[f, c].ocultar();
         }
 
         private string getPalabraBBDD()
         {
+            //Recuperamos una palabra de la BBDD
             return "SAL";
         }
 
         private bool hayCarta(int filas, int columnas)
         {
+
             return (cartas[filas, columnas] != null);
         }
 

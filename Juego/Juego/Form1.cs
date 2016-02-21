@@ -36,21 +36,34 @@ namespace Juego
             {
                 for (int j = 0; j < numColumnas; j++)
                 {
+                    //insertamos el boton
                     botones[i, j] = new MiBoton(i,j);
-                    botones[i, j].Text = "[" + i+ "," + j+"]";
                     this.tableLayoutPanel1.Controls.Add(botones[i, j]);
 
-                    //asociamos un controlador de eventos para todos los botones
-                    botones[i, j].Click += new EventHandler(this.OnClick);
+                    //asociamos dos controladores de eventos para cada boton
+                    botones[i, j].MouseUp += new MouseEventHandler(this.mouseUp);
+                    botones[i, j].MouseDown += new MouseEventHandler(this.mouseDown);
+
+                    //cambiamos el tamaño del boton
+                    botones[i, j].Width = 80;
+                    botones[i, j].Height = 80;
+
                 }
             }
             actualizaIU();
         }
 
-        private void OnClick(object sender, EventArgs e)
+        private void mouseUp(object sender, EventArgs e)
         {
             //MessageBox.Show("["+((MiBoton)sender).f+ "," + ((MiBoton)sender).c+ "]");
-            tablero.levantar(((MiBoton)sender).f, ((MiBoton)sender).c);
+            tablero.ocultarCarta(((MiBoton)sender).f, ((MiBoton)sender).c);
+            actualizaIU();
+        }
+
+        private void mouseDown(object sender, EventArgs e)
+        {
+            //MessageBox.Show("["+((MiBoton)sender).f+ "," + ((MiBoton)sender).c+ "]");
+            tablero.mostrarCarta(((MiBoton)sender).f, ((MiBoton)sender).c);
             actualizaIU();
         }
 
