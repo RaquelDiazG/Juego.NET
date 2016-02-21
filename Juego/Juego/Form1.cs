@@ -28,6 +28,9 @@ namespace Juego
             tablero = new Tablero(numFilas, numColumnas);
             botones = new Button[numFilas, numColumnas];
 
+            //Mostramos la palabra
+            label1.Text = tablero.palabra;
+
             //Rellenamos el layout con botones creados dinamicamente
             this.tableLayoutPanel1.RowCount = numFilas;
             this.tableLayoutPanel1.ColumnCount = numColumnas;

@@ -13,7 +13,7 @@ namespace Juego
         private int columnas;
         private int puntos;
         private int tiempo;
-        private string palabra;
+        public string palabra { get; set; }
         private int posicion;
         private string[] abecedario= { "A", "B", "C", "D", "E", "F", "G" };
 
