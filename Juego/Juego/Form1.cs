@@ -12,18 +12,24 @@ namespace Juego
 {
     public partial class Form1: Form
     {
-        private int numFilas = 2;
-        private int numColumnas = 2;
+        private int numFilas;
+        private int numColumnas;
         private Tablero tablero;
         private Button[,] botones;
 
-        public Form1()
+        public Form1(int filas, int columnas)
         {
             InitializeComponent();
+            numFilas = filas;
+            numColumnas = columnas;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Autoajustar la ventana
+            this.AutoSize = true;
+            this.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+
             //Inicializamos las variables
             tablero = new Tablero(numFilas, numColumnas);
             botones = new Button[numFilas, numColumnas];
