@@ -1,0 +1,13 @@
+C:\Users\raque\Documents\Visual Studio 2015\Projects\PRACTICA1\Juego\Juego\obj\Debug\Juego.Juego.resources
+C:\Users\raque\Documents\Visual Studio 2015\Projects\PRACTICA1\Juego\Juego\obj\Debug\Juego.Inicio.resources
+C:\Users\raque\Documents\Visual Studio 2015\Projects\PRACTICA1\Juego\Juego\obj\Debug\JuegoCartas.csproj.GenerateResource.Cache
+C:\Users\raque\Documents\Visual Studio 2015\Projects\PRACTICA1\Juego\Juego\bin\Debug\JuegoCartas.exe.config
+C:\Users\raque\Documents\Visual Studio 2015\Projects\PRACTICA1\Juego\Juego\bin\Debug\JuegoCartas.exe
+C:\Users\raque\Documents\Visual Studio 2015\Projects\PRACTICA1\Juego\Juego\bin\Debug\JuegoCartas.pdb
+C:\Users\raque\Documents\Visual Studio 2015\Projects\PRACTICA1\Juego\Juego\obj\Debug\JuegoCartas.csprojResolveAssemblyReference.cache
+C:\Users\raque\Documents\Visual Studio 2015\Projects\PRACTICA1\Juego\Juego\obj\Debug\JuegoCartas.Properties.Resources.resources
+C:\Users\raque\Documents\Visual Studio 2015\Projects\PRACTICA1\Juego\Juego\obj\Debug\JuegoCartas.exe
+C:\Users\raque\Documents\Visual Studio 2015\Projects\PRACTICA1\Juego\Juego\obj\Debug\JuegoCartas.pdb
+C:\Users\raque\Documents\Visual Studio 2015\Projects\PRACTICA1\Juego\JuegoCartas\bin\Debug\JuegoCartas.exe.config
+C:\Users\raque\Documents\Visual Studio 2015\Projects\PRACTICA1\Juego\JuegoCartas\obj\Debug\JuegoCartas.exe
+C:\Users\raque\Documents\Visual Studio 2015\Projects\PRACTICA1\Juego\JuegoCartas\obj\Debug\JuegoCartas.pdb

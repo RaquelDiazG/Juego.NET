@@ -10,21 +10,21 @@ using System.Windows.Forms;
 
 namespace Juego
 {
-    public partial class Form1: Form
+    public partial class Juego: Form
     {
         private int numFilas;
         private int numColumnas;
         private Tablero tablero;
         private Button[,] botones;
 
-        public Form1(int filas, int columnas)
+        public Juego(int filas, int columnas)
         {
             InitializeComponent();
             numFilas = filas;
             numColumnas = columnas;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Juego_Load(object sender, EventArgs e)
         {
             //Autoajustar la ventana
             this.AutoSize = true;

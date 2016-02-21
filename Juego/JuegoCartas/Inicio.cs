@@ -30,21 +30,21 @@ namespace Juego
 
         private void btn_facil_Click(object sender, EventArgs e)
         {
-            Form1 form=new Form1(facil, facil);
+            Juego form=new Juego(facil, facil);
             form.Show();
             this.Hide();
         }
 
         private void btn_medio_Click(object sender, EventArgs e)
         {
-            Form1 form = new Form1(medio, medio);
+            Juego form = new Juego(medio, medio);
             form.Show();
             this.Hide();
         }
 
         private void btn_dificil_Click(object sender, EventArgs e)
         {
-            Form1 form = new Form1(dificil, dificil);
+            Juego form = new Juego(dificil, dificil);
             form.Show();
             this.Hide();
         }

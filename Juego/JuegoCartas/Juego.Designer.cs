@@ -1,6 +1,6 @@
 ﻿namespace Juego
 {
-    partial class Form1
+    partial class Juego
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -43,7 +43,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 104F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(185, 104);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -65,7 +65,7 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "PUNTOS";
             // 
-            // Form1
+            // Juego
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -73,9 +73,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Name = "Juego";
+            this.Text = "Juego";
+            this.Load += new System.EventHandler(this.Juego_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
