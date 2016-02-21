@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BDModelo.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Palabras">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Original" Type="varchar" MaxLength="100" />
+    <Property Name="Sin_acentos" Type="varchar" MaxLength="100" />
+    <Property Name="Sensible" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Puntuaciones">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" />
+    <Property Name="Puntos" Type="int" />
+    <Property Name="Tiempo" Type="int" />
+  </EntityType>
+  <EntityContainer Name="BDModeloStoreContainer">
+    <EntitySet Name="Palabras" EntityType="Self.Palabras" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Puntuaciones" EntityType="Self.Puntuaciones" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

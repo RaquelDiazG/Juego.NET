@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BDModeloStoreContainer" CdmEntityContainer="BDEntidades">
+    <EntitySetMapping Name="Palabras">
+      <EntityTypeMapping TypeName="BDModelo.Palabra">
+        <MappingFragment StoreEntitySet="Palabras">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Original" ColumnName="Original" />
+          <ScalarProperty Name="Sin_acentos" ColumnName="Sin_acentos" />
+          <ScalarProperty Name="Sensible" ColumnName="Sensible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Puntuaciones">
+      <EntityTypeMapping TypeName="BDModelo.Puntuacione">
+        <MappingFragment StoreEntitySet="Puntuaciones">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Puntos" ColumnName="Puntos" />
+          <ScalarProperty Name="Tiempo" ColumnName="Tiempo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

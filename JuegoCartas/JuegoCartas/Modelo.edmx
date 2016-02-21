@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BDModelo.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Palabras">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Original" Type="varchar" MaxLength="100" />
+          <Property Name="Sin_acentos" Type="varchar" MaxLength="100" />
+          <Property Name="Sensible" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Puntuaciones">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="100" />
+          <Property Name="Puntos" Type="int" />
+          <Property Name="Tiempo" Type="int" />
+        </EntityType>
+        <EntityContainer Name="BDModeloStoreContainer">
+          <EntitySet Name="Palabras" EntityType="Self.Palabras" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Puntuaciones" EntityType="Self.Puntuaciones" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BDModelo" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Palabra">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Original" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Sin_acentos" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Sensible" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Puntuacione">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Puntos" Type="Int32" />
+          <Property Name="Tiempo" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="BDEntidades" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Palabras" EntityType="Self.Palabra" />
+          <EntitySet Name="Puntuaciones" EntityType="Self.Puntuacione" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BDModeloStoreContainer" CdmEntityContainer="BDEntidades">
+          <EntitySetMapping Name="Palabras">
+            <EntityTypeMapping TypeName="BDModelo.Palabra">
+              <MappingFragment StoreEntitySet="Palabras">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Original" ColumnName="Original" />
+                <ScalarProperty Name="Sin_acentos" ColumnName="Sin_acentos" />
+                <ScalarProperty Name="Sensible" ColumnName="Sensible" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Puntuaciones">
+            <EntityTypeMapping TypeName="BDModelo.Puntuacione">
+              <MappingFragment StoreEntitySet="Puntuaciones">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Puntos" ColumnName="Puntos" />
+                <ScalarProperty Name="Tiempo" ColumnName="Tiempo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

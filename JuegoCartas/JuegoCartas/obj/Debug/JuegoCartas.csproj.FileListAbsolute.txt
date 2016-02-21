@@ -14,3 +14,14 @@ C:\Users\raque\Documents\Visual Studio 2015\Projects\PRACTICA1\Juego\JuegoCartas
 C:\Users\raque\Documents\Visual Studio 2015\Projects\PRACTICA1\JuegoCartas\JuegoCartas\bin\Debug\JuegoCartas.exe.config
 C:\Users\raque\Documents\Visual Studio 2015\Projects\PRACTICA1\JuegoCartas\JuegoCartas\obj\Debug\JuegoCartas.exe
 C:\Users\raque\Documents\Visual Studio 2015\Projects\PRACTICA1\JuegoCartas\JuegoCartas\obj\Debug\JuegoCartas.pdb
+C:\Users\raque\Documents\Visual Studio 2015\Projects\PRACTICA1\JuegoCartas\JuegoCartas\bin\Debug\JuegoCartas.exe
+C:\Users\raque\Documents\Visual Studio 2015\Projects\PRACTICA1\JuegoCartas\JuegoCartas\bin\Debug\JuegoCartas.pdb
+C:\Users\raque\Documents\Visual Studio 2015\Projects\PRACTICA1\JuegoCartas\JuegoCartas\bin\Debug\EntityFramework.dll
+C:\Users\raque\Documents\Visual Studio 2015\Projects\PRACTICA1\JuegoCartas\JuegoCartas\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\raque\Documents\Visual Studio 2015\Projects\PRACTICA1\JuegoCartas\JuegoCartas\bin\Debug\EntityFramework.xml
+C:\Users\raque\Documents\Visual Studio 2015\Projects\PRACTICA1\JuegoCartas\JuegoCartas\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\raque\Documents\Visual Studio 2015\Projects\PRACTICA1\JuegoCartas\JuegoCartas\obj\Debug\JuegoCartas.csprojResolveAssemblyReference.cache
+C:\Users\raque\Documents\Visual Studio 2015\Projects\PRACTICA1\JuegoCartas\JuegoCartas\obj\Debug\Juego.Juego.resources
+C:\Users\raque\Documents\Visual Studio 2015\Projects\PRACTICA1\JuegoCartas\JuegoCartas\obj\Debug\Juego.Inicio.resources
+C:\Users\raque\Documents\Visual Studio 2015\Projects\PRACTICA1\JuegoCartas\JuegoCartas\obj\Debug\JuegoCartas.Properties.Resources.resources
+C:\Users\raque\Documents\Visual Studio 2015\Projects\PRACTICA1\JuegoCartas\JuegoCartas\obj\Debug\JuegoCartas.csproj.GenerateResource.Cache
