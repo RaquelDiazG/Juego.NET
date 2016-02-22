@@ -25,3 +25,4 @@ C:\Users\raque\Documents\Visual Studio 2015\Projects\PRACTICA1\JuegoCartas\Juego
 C:\Users\raque\Documents\Visual Studio 2015\Projects\PRACTICA1\JuegoCartas\JuegoCartas\obj\Debug\Juego.Inicio.resources
 C:\Users\raque\Documents\Visual Studio 2015\Projects\PRACTICA1\JuegoCartas\JuegoCartas\obj\Debug\JuegoCartas.Properties.Resources.resources
 C:\Users\raque\Documents\Visual Studio 2015\Projects\PRACTICA1\JuegoCartas\JuegoCartas\obj\Debug\JuegoCartas.csproj.GenerateResource.Cache
+C:\Users\raque\Documents\Visual Studio 2015\Projects\PRACTICA1\JuegoCartas\JuegoCartas\obj\Debug\JuegoCartas.Puntuaciones.resources

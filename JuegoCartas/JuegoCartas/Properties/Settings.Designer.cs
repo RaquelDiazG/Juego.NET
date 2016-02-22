@@ -22,5 +22,17 @@ namespace JuegoCartas.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\raque\\Documents\\Vis" +
+            "ual Studio 2015\\Projects\\PRACTICA1\\BD.mdf\";Integrated Security=True;Connect Time" +
+            "out=30")]
+        public string BDConnectionString {
+            get {
+                return ((string)(this["BDConnectionString"]));
+            }
+        }
     }
 }

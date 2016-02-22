@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JuegoCartas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -51,7 +52,9 @@ namespace Juego
 
         private void btn_puntuaciones_Click(object sender, EventArgs e)
         {
-
+            Puntuaciones form = new Puntuaciones();
+            form.Show();
+            this.Hide();
         }
 
     }
