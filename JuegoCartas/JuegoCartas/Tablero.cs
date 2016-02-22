@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JuegoCartas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,9 +16,10 @@ namespace Juego
         public int puntos { get; set; }
         private int tiempo;
         public string palabra { get; set; }
-        private string[] letras_palabra;
         private int posicion;
-        private string[] abecedario= { "A", "B", "C", "D", "E", "F", "G" };
+        private string[] abecedario= { "a", "b", "c", "d", "e", "f", "g" };
+        private int minLetras;
+        private int maxLetras;
 
         public Tablero(int f, int c)
         {
@@ -25,23 +27,28 @@ namespace Juego
             filas = f;
             columnas = c;
             posicion = 0;
+            minLetras = 2;
+            switch (filas)
+            {
+                case 2: maxLetras = 3; break;
+                case 3: maxLetras = 5; break;
+                case 4: maxLetras = 8; break;
+            }
 
             //Creamos el tablero 
             cartas = new Carta[f, c];
 
             //Recuperamos una palabra de BBDD
             palabra = getPalabraBBDD();
-            // string[] letras_palabra = palabra.Split(abecedario);
-             letras_palabra = new string[] { "S", "A", "L" };
 
              //Introducimos las letras de la palabra en el tablero
             Random aleatorio = new Random();
-            foreach (string letra in letras_palabra)
+            for(int i=0;i<palabra.Length;i++)
             {
                 bool insertada = false;
                 do
                 {
-                    insertada = insertarLetra(aleatorio, letra);
+                    insertada = insertarLetra(aleatorio, palabra[i].ToString());
                 }
                 while (!insertada);
             }
@@ -53,7 +60,7 @@ namespace Juego
                 {
                     if (!hayCarta(i, j))
                     {
-                        //string letra_abecedario = abecedario[aleatorio.Next(abecedario.lenght())];
+                        //string letra_abecedario = abecedario[aleatorio.Next(abecedario.Length)];
                         string letra_abecedario = "P";
                         if (!palabra.Contains(letra_abecedario))
                         {
@@ -104,8 +111,26 @@ namespace Juego
 
         private string getPalabraBBDD()
         {
-            //Recuperamos una palabra de la BBDD
-            return "SAL";
+            //Conexion a BBDD
+            BDEntidades entidades = new BDEntidades();
+
+            //Consulta LINQ
+
+            /*
+            SELECT TOP 1 Original FROM Palabras
+            WHERE LEN(Original)=3
+            ORDER BY NEWID();
+            ;
+            */
+            Random random = new Random();
+            int aleatorio = random.Next(entidades.Palabras.Count());
+            string respuesta = (from palabra in entidades.Palabras
+                                where palabra.Original.Length >= minLetras
+                                where palabra.Original.Length <= maxLetras
+                                orderby aleatorio
+                                select palabra.Original).FirstOrDefault();
+            return respuesta;
+
         }
 
         private bool hayCarta(int filas, int columnas)
