@@ -63,6 +63,12 @@
       <DependentUpon>BDDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Carta.cs" />
+    <Compile Include="GuardarPuntuacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GuardarPuntuacion.Designer.cs">
+      <DependentUpon>GuardarPuntuacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Juego.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,9 @@
       <DependentUpon>Puntuaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Tablero.cs" />
+    <EmbeddedResource Include="GuardarPuntuacion.resx">
+      <DependentUpon>GuardarPuntuacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Juego.resx">
       <DependentUpon>Juego.cs</DependentUpon>
     </EmbeddedResource>

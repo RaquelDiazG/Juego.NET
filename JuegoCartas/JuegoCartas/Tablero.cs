@@ -157,7 +157,8 @@ namespace Juego
             //comprobamos si ha ganado
             if (posicion == palabra.Length)
             {
-                MessageBox.Show("¡Has ganado!");
+                GuardarPuntuacion form=new GuardarPuntuacion(puntos, tiempo);
+                form.Show();
             }
            
         }
