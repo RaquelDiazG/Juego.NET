@@ -114,5 +114,11 @@ namespace Juego
             }
         }
 
+        private void btn_volver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Inicio inicio = new Inicio();
+            inicio.Show();
+        }
     }
 }
