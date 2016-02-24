@@ -30,16 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bDDataSet = new JuegoCartas.BDDataSet();
-            this.puntuacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.puntuacionesTableAdapter = new JuegoCartas.BDDataSetTableAdapters.PuntuacionesTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.puntosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tiempoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.puntuacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bDDataSet = new JuegoCartas.BDDataSet();
+            this.puntuacionesTableAdapter = new JuegoCartas.BDDataSetTableAdapters.PuntuacionesTableAdapter();
+            this.btn_volver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bDDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.puntuacionesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -59,20 +60,6 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(318, 150);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // bDDataSet
-            // 
-            this.bDDataSet.DataSetName = "BDDataSet";
-            this.bDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // puntuacionesBindingSource
-            // 
-            this.puntuacionesBindingSource.DataMember = "Puntuaciones";
-            this.puntuacionesBindingSource.DataSource = this.bDDataSet;
-            // 
-            // puntuacionesTableAdapter
-            // 
-            this.puntuacionesTableAdapter.ClearBeforeFill = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -103,18 +90,43 @@
             this.tiempoDataGridViewTextBoxColumn.Name = "tiempoDataGridViewTextBoxColumn";
             this.tiempoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // puntuacionesBindingSource
+            // 
+            this.puntuacionesBindingSource.DataMember = "Puntuaciones";
+            this.puntuacionesBindingSource.DataSource = this.bDDataSet;
+            // 
+            // bDDataSet
+            // 
+            this.bDDataSet.DataSetName = "BDDataSet";
+            this.bDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // puntuacionesTableAdapter
+            // 
+            this.puntuacionesTableAdapter.ClearBeforeFill = true;
+            // 
+            // btn_volver
+            // 
+            this.btn_volver.Location = new System.Drawing.Point(32, 13);
+            this.btn_volver.Name = "btn_volver";
+            this.btn_volver.Size = new System.Drawing.Size(75, 23);
+            this.btn_volver.TabIndex = 1;
+            this.btn_volver.Text = "Volver";
+            this.btn_volver.UseVisualStyleBackColor = true;
+            this.btn_volver.Click += new System.EventHandler(this.btn_volver_Click);
+            // 
             // Puntuaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(370, 261);
+            this.Controls.Add(this.btn_volver);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Puntuaciones";
             this.Text = "Puntuaciones";
             this.Load += new System.EventHandler(this.Puntuaciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bDDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.puntuacionesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -129,5 +141,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn puntosDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tiempoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btn_volver;
     }
 }

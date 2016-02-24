@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Juego;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,9 +20,17 @@ namespace JuegoCartas
 
         private void Puntuaciones_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'bDDataSet.Puntuaciones' Puede moverla o quitarla según sea necesario.
+            // Carga datos en la tabla 'bDDataSet.Puntuaciones'
             this.puntuacionesTableAdapter.Fill(this.bDDataSet.Puntuaciones);
+            // Ordenar los datos por la columna de puntos
+            this.dataGridView1.Sort(this.puntosDataGridViewTextBoxColumn, ListSortDirection.Ascending);
+        }
 
+        private void btn_volver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Inicio inicio = new Inicio();
+            inicio.Show();
         }
     }
 }
