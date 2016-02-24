@@ -31,12 +31,12 @@ namespace Juego
 
         public override string ToString()
         {
-            if (!levantada)
+            if (levantada)
             {
-                return "X";
+                return letra;
             }
             else {
-                return letra;
+                return "";
             }
         }
     }

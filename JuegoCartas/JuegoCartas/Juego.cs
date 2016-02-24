@@ -60,6 +60,9 @@ namespace Juego
                     botones[i, j].Width = 80;
                     botones[i, j].Height = 80;
 
+                    //añadimos las imagenes a los botones
+                    ponerImagenCarta(i, j);
+
                 }
             }
             actualizaIU();
@@ -68,9 +71,13 @@ namespace Juego
         private void mouseDown(object sender, EventArgs e)
         {
             //MessageBox.Show("["+((MiBoton)sender).f+ "," + ((MiBoton)sender).c+ "]");
+            //mostramos la carta
             tablero.mostrarCarta(((MiBoton)sender).f, ((MiBoton)sender).c);
+            quitarImagenCarta(((MiBoton)sender).f, ((MiBoton)sender).c);
+            //aumentamos los puntos
             tablero.aumentarPuntos();
             label2.Text = tablero.puntos.ToString();
+            //actualizamos el tablero
             actualizaIU();
         }
 
@@ -93,7 +100,8 @@ namespace Juego
                     for (int j = 0; j < numColumnas; j++)
                     {
                         botones[i, j].Enabled = true;
-                        tablero.ocultarCarta(i,j);
+                        tablero.ocultarCarta(i, j);
+                        ponerImagenCarta(i, j);
                     }
                 }
                 //reseteamos el contador
@@ -119,6 +127,18 @@ namespace Juego
             this.Hide();
             Inicio inicio = new Inicio();
             inicio.Show();
+        }
+
+
+        private void ponerImagenCarta(int i, int j)
+        {
+            botones[i, j].Image = global::JuegoCartas.Properties.Resources.carta_detras;
+        }
+
+        private void quitarImagenCarta(int i, int j)
+        {
+            botones[i,j].Image = null;
+            botones[i,j].BackColor = Color.WhiteSmoke;
         }
     }
 }
