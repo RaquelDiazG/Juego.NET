@@ -38,6 +38,7 @@
             this.bDDataSet = new JuegoCartas.BDDataSet();
             this.puntuacionesTableAdapter = new JuegoCartas.BDDataSetTableAdapters.PuntuacionesTableAdapter();
             this.btn_volver = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.puntuacionesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bDDataSet)).BeginInit();
@@ -58,7 +59,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(32, 73);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(318, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(345, 150);
             this.dataGridView1.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn
@@ -106,19 +107,30 @@
             // 
             // btn_volver
             // 
+            this.btn_volver.Image = global::JuegoCartas.Properties.Resources.volver;
+            this.btn_volver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_volver.Location = new System.Drawing.Point(32, 13);
             this.btn_volver.Name = "btn_volver";
-            this.btn_volver.Size = new System.Drawing.Size(75, 23);
+            this.btn_volver.Size = new System.Drawing.Size(40, 38);
             this.btn_volver.TabIndex = 1;
-            this.btn_volver.Text = "Volver";
             this.btn_volver.UseVisualStyleBackColor = true;
             this.btn_volver.Click += new System.EventHandler(this.btn_volver_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(174, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Puntuaciones";
             // 
             // Puntuaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(370, 261);
+            this.ClientSize = new System.Drawing.Size(404, 261);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_volver);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Puntuaciones";
@@ -128,6 +140,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.puntuacionesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bDDataSet)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -142,5 +155,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn puntosDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tiempoDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btn_volver;
+        private System.Windows.Forms.Label label1;
     }
 }

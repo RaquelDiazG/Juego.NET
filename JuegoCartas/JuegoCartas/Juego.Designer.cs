@@ -68,11 +68,13 @@
             // 
             // btn_volver
             // 
+            this.btn_volver.Image = global::JuegoCartas.Properties.Resources.volver;
+            this.btn_volver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_volver.Location = new System.Drawing.Point(12, 12);
             this.btn_volver.Name = "btn_volver";
-            this.btn_volver.Size = new System.Drawing.Size(75, 23);
+            this.btn_volver.Size = new System.Drawing.Size(42, 35);
             this.btn_volver.TabIndex = 3;
-            this.btn_volver.Text = "Volver";
+            this.btn_volver.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_volver.UseVisualStyleBackColor = true;
             this.btn_volver.Click += new System.EventHandler(this.btn_volver_Click);
             // 

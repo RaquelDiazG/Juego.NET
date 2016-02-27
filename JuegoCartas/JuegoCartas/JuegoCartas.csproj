@@ -182,6 +182,10 @@
       <DependentUpon>Modelo.edmx</DependentUpon>
       <LastGenOutput>Modelo.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\volver.png" />
+    <None Include="Resources\ok.png" />
+    <None Include="Resources\estrella.png" />
+    <None Include="Resources\medalla.png" />
     <None Include="Resources\carta_detras.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

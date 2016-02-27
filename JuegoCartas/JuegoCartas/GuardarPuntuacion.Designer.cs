@@ -37,7 +37,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(128, 25);
+            this.label1.Location = new System.Drawing.Point(102, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 13);
             this.label1.TabIndex = 0;
@@ -61,11 +61,14 @@
             // 
             // btn_guardar_puntuacion
             // 
-            this.btn_guardar_puntuacion.Location = new System.Drawing.Point(131, 185);
+            this.btn_guardar_puntuacion.Image = global::JuegoCartas.Properties.Resources.ok;
+            this.btn_guardar_puntuacion.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_guardar_puntuacion.Location = new System.Drawing.Point(98, 159);
             this.btn_guardar_puntuacion.Name = "btn_guardar_puntuacion";
-            this.btn_guardar_puntuacion.Size = new System.Drawing.Size(75, 23);
+            this.btn_guardar_puntuacion.Size = new System.Drawing.Size(75, 66);
             this.btn_guardar_puntuacion.TabIndex = 3;
             this.btn_guardar_puntuacion.Text = "Guardar";
+            this.btn_guardar_puntuacion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_guardar_puntuacion.UseVisualStyleBackColor = true;
             this.btn_guardar_puntuacion.Click += new System.EventHandler(this.btn_guardar_puntuacion_Click);
             // 
