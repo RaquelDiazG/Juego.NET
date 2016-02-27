@@ -26,6 +26,9 @@ namespace Juego
 
         private void Juego_Load(object sender, EventArgs e)
         {
+            //Centrar en la pantalla
+            this.CenterToScreen();
+
             //Autoajustar la ventana
             this.AutoSize = true;
             this.AutoSizeMode = AutoSizeMode.GrowAndShrink;

@@ -20,6 +20,8 @@ namespace JuegoCartas
 
         private void Puntuaciones_Load(object sender, EventArgs e)
         {
+            //Centrar en la pantalla
+            this.CenterToScreen();
             // Carga datos en la tabla 'bDDataSet.Puntuaciones'
             this.puntuacionesTableAdapter.Fill(this.bDDataSet.Puntuaciones);
             // Ordenar los datos por la columna de puntos

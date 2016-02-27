@@ -45,7 +45,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 104F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(185, 104);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(310, 104);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
@@ -82,7 +82,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(334, 461);
             this.Controls.Add(this.btn_volver);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

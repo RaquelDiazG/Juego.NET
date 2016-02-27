@@ -20,6 +20,8 @@ namespace JuegoCartas
             InitializeComponent();
             this.puntos = puntos;
             this.tiempo = tiempo;
+            //Centrar en la pantalla
+            this.CenterToScreen();
         }
 
         private void btn_guardar_puntuacion_Click(object sender, EventArgs e)
