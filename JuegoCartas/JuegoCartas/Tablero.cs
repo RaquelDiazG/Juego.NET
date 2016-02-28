@@ -17,7 +17,6 @@ namespace Juego
         private int tiempo;
         public string palabra { get; set; }
         private int posicion;
-        private string[] abecedario= { "a", "b", "c", "d", "e", "f", "g" };
         private int minLetras;
         private int maxLetras;
 
@@ -59,12 +58,11 @@ namespace Juego
                 for (int j = 0; j < columnas; j++)
                 {
                     if (!hayCarta(i, j))
-                    {
-                        //string letra_abecedario = abecedario[aleatorio.Next(abecedario.Length)];
-                        string letra_abecedario = "P";
-                        if (!palabra.Contains(letra_abecedario))
+                    { 
+                        string letra_auxiliar = "♬";
+                        if (!palabra.Contains(letra_auxiliar))
                         {
-                            cartas[i, j] = new Carta(letra_abecedario);
+                            cartas[i, j] = new Carta(letra_auxiliar);
                         }
                     }
                 }

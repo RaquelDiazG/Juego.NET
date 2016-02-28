@@ -73,9 +73,29 @@ namespace JuegoCartas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap estrella {
+        internal static System.Drawing.Bitmap estrella1 {
             get {
-                object obj = ResourceManager.GetObject("estrella", resourceCulture);
+                object obj = ResourceManager.GetObject("estrella1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap estrella2 {
+            get {
+                object obj = ResourceManager.GetObject("estrella2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap estrella3 {
+            get {
+                object obj = ResourceManager.GetObject("estrella3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

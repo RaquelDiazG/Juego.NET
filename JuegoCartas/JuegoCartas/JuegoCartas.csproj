@@ -182,9 +182,11 @@
       <DependentUpon>Modelo.edmx</DependentUpon>
       <LastGenOutput>Modelo.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\estrella3.png" />
+    <None Include="Resources\estrella2.png" />
+    <None Include="Resources\estrella1.png" />
     <None Include="Resources\volver.png" />
     <None Include="Resources\ok.png" />
-    <None Include="Resources\estrella.png" />
     <None Include="Resources\medalla.png" />
     <None Include="Resources\carta_detras.jpg" />
   </ItemGroup>

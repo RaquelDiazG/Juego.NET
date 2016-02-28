@@ -38,7 +38,7 @@
             this.bDDataSet = new JuegoCartas.BDDataSet();
             this.puntuacionesTableAdapter = new JuegoCartas.BDDataSetTableAdapters.PuntuacionesTableAdapter();
             this.btn_volver = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.txt_puntuaciones = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.puntuacionesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bDDataSet)).BeginInit();
@@ -116,21 +116,22 @@
             this.btn_volver.UseVisualStyleBackColor = true;
             this.btn_volver.Click += new System.EventHandler(this.btn_volver_Click);
             // 
-            // label1
+            // txt_puntuaciones
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(174, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Puntuaciones";
+            this.txt_puntuaciones.AutoSize = true;
+            this.txt_puntuaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_puntuaciones.Location = new System.Drawing.Point(153, 21);
+            this.txt_puntuaciones.Name = "txt_puntuaciones";
+            this.txt_puntuaciones.Size = new System.Drawing.Size(118, 20);
+            this.txt_puntuaciones.TabIndex = 2;
+            this.txt_puntuaciones.Text = "Puntuaciones";
             // 
             // Puntuaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(404, 261);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txt_puntuaciones);
             this.Controls.Add(this.btn_volver);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Puntuaciones";
@@ -155,6 +156,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn puntosDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tiempoDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btn_volver;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label txt_puntuaciones;
     }
 }

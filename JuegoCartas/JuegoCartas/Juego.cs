@@ -62,6 +62,8 @@ namespace Juego
                     //cambiamos el tamaño del boton
                     botones[i, j].Width = 80;
                     botones[i, j].Height = 80;
+                    //cambiamos el tamaño de la fuente
+                    botones[i, j].Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
                     //añadimos las imagenes a los botones
                     ponerImagenCarta(i, j);
