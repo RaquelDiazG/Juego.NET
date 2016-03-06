@@ -84,7 +84,7 @@ namespace Juego
                     botones[i, j].Height = 80;
 
                     //cambiamos el tamaño de la fuente
-                    botones[i, j].Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    botones[i, j].Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
                     //añadimos las imagenes a los botones
                     ponerImagenCarta(i, j);
@@ -158,7 +158,7 @@ namespace Juego
 
         private void ponerImagenCarta(int i, int j)
         {
-            botones[i, j].Image = global::JuegoCartas.Properties.Resources.carta_detras;
+            botones[i, j].Image = global::JuegoCartas.Properties.Resources.mosaico;
         }
 
         private void quitarImagenCarta(int i, int j)

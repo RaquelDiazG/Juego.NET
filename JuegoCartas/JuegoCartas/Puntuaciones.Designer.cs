@@ -37,8 +37,8 @@
             this.puntuacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bDDataSet = new JuegoCartas.BDDataSet();
             this.puntuacionesTableAdapter = new JuegoCartas.BDDataSetTableAdapters.PuntuacionesTableAdapter();
-            this.btn_volver = new System.Windows.Forms.Button();
             this.txt_puntuaciones = new System.Windows.Forms.Label();
+            this.btn_volver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.puntuacionesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bDDataSet)).BeginInit();
@@ -105,6 +105,16 @@
             // 
             this.puntuacionesTableAdapter.ClearBeforeFill = true;
             // 
+            // txt_puntuaciones
+            // 
+            this.txt_puntuaciones.AutoSize = true;
+            this.txt_puntuaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_puntuaciones.Location = new System.Drawing.Point(153, 21);
+            this.txt_puntuaciones.Name = "txt_puntuaciones";
+            this.txt_puntuaciones.Size = new System.Drawing.Size(118, 20);
+            this.txt_puntuaciones.TabIndex = 2;
+            this.txt_puntuaciones.Text = "Puntuaciones";
+            // 
             // btn_volver
             // 
             this.btn_volver.Image = global::JuegoCartas.Properties.Resources.volver;
@@ -116,20 +126,11 @@
             this.btn_volver.UseVisualStyleBackColor = true;
             this.btn_volver.Click += new System.EventHandler(this.btn_volver_Click);
             // 
-            // txt_puntuaciones
-            // 
-            this.txt_puntuaciones.AutoSize = true;
-            this.txt_puntuaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_puntuaciones.Location = new System.Drawing.Point(153, 21);
-            this.txt_puntuaciones.Name = "txt_puntuaciones";
-            this.txt_puntuaciones.Size = new System.Drawing.Size(118, 20);
-            this.txt_puntuaciones.TabIndex = 2;
-            this.txt_puntuaciones.Text = "Puntuaciones";
-            // 
             // Puntuaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(404, 261);
             this.Controls.Add(this.txt_puntuaciones);
             this.Controls.Add(this.btn_volver);

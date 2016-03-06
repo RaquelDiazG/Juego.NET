@@ -182,6 +182,9 @@
       <DependentUpon>Modelo.edmx</DependentUpon>
       <LastGenOutput>Modelo.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\mosaico.png" />
+    <None Include="Resources\mosaico4.png" />
+    <None Include="Resources\mosaico2.jpg" />
     <None Include="Resources\musica.wav" />
     <None Include="Resources\repetir.png" />
     <None Include="Resources\sonidoOn.png" />

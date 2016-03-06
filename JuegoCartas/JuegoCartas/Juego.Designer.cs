@@ -35,12 +35,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btn_repetir = new System.Windows.Forms.Button();
-            this.btn_musica = new System.Windows.Forms.Button();
-            this.btn_volver = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.label_tiempo = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btn_repetir = new System.Windows.Forms.Button();
+            this.btn_musica = new System.Windows.Forms.Button();
+            this.btn_volver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -99,6 +99,31 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Movimientos:";
             // 
+            // timer
+            // 
+            this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // label_tiempo
+            // 
+            this.label_tiempo.AutoSize = true;
+            this.label_tiempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_tiempo.Location = new System.Drawing.Point(332, 62);
+            this.label_tiempo.Name = "label_tiempo";
+            this.label_tiempo.Size = new System.Drawing.Size(19, 20);
+            this.label_tiempo.TabIndex = 8;
+            this.label_tiempo.Text = "0";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(274, 65);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(59, 17);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Tiempo:";
+            // 
             // btn_repetir
             // 
             this.btn_repetir.Image = ((System.Drawing.Image)(resources.GetObject("btn_repetir.Image")));
@@ -131,35 +156,11 @@
             this.btn_volver.UseVisualStyleBackColor = true;
             this.btn_volver.Click += new System.EventHandler(this.btn_volver_Click);
             // 
-            // timer
-            // 
-            this.timer.Interval = 1000;
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
-            // label_tiempo
-            // 
-            this.label_tiempo.AutoSize = true;
-            this.label_tiempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_tiempo.Location = new System.Drawing.Point(332, 62);
-            this.label_tiempo.Name = "label_tiempo";
-            this.label_tiempo.Size = new System.Drawing.Size(19, 20);
-            this.label_tiempo.TabIndex = 8;
-            this.label_tiempo.Text = "0";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(274, 65);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 17);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Tiempo:";
-            // 
             // Juego
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(366, 461);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label_tiempo);
