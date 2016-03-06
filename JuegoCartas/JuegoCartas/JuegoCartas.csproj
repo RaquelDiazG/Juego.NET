@@ -182,6 +182,7 @@
       <DependentUpon>Modelo.edmx</DependentUpon>
       <LastGenOutput>Modelo.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\musica.wav" />
     <None Include="Resources\repetir.png" />
     <None Include="Resources\sonidoOn.png" />
     <None Include="Resources\sonidoOff.png" />

@@ -36,7 +36,7 @@ namespace Juego
             this.AutoSizeMode = AutoSizeMode.GrowAndShrink;
 
             //Sonido
-            player = new SoundPlayer(@"C:\Users\raque\Downloads\Angel-voice\Angel-voice.wav");
+            player = new SoundPlayer(global::JuegoCartas.Properties.Resources.musica);
             player.PlayLooping();
             btn_musica.Tag = "sonidoOn";
 
