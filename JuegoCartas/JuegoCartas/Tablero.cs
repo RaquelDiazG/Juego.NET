@@ -112,28 +112,19 @@ namespace Juego
             //Conexion a BBDD
             BDEntidades entidades = new BDEntidades();
 
-            //Consulta LINQ
-
-            /*
-            SELECT TOP 1 Original FROM Palabras
-            WHERE LEN(Original)=3
-            ORDER BY NEWID();
-            ;
-            */
+            //Consulta LINQ - palabra aleatoria con longitud entre el maximo y el minimo
             Random random = new Random();
-            int aleatorio = random.Next(entidades.Palabras.Count());
-            string respuesta = (from palabra in entidades.Palabras
-                                where palabra.Original.Length >= minLetras
-                                where palabra.Original.Length <= maxLetras
-                                orderby aleatorio
-                                select palabra.Original).FirstOrDefault();
-            return respuesta;
-
+            var palabras = (from palabra in entidades.Palabras
+                            where palabra.Original.Length >= minLetras
+                            && palabra.Original.Length <= maxLetras
+                            orderby palabra.Id
+                            select palabra.Original);
+            int aleatorio = random.Next(palabras.Count());
+            return palabras.Skip(aleatorio).First();
         }
 
         private bool hayCarta(int filas, int columnas)
         {
-
             return (cartas[filas, columnas] != null);
         }
 
