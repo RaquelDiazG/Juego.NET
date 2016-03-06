@@ -182,6 +182,11 @@
       <DependentUpon>Modelo.edmx</DependentUpon>
       <LastGenOutput>Modelo.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\repetir.png" />
+    <None Include="Resources\sonidoOn.png" />
+    <None Include="Resources\sonidoOff.png" />
+    <None Include="Resources\sonido-on.png" />
+    <None Include="Resources\sonido-off.png" />
     <None Include="Resources\estrella3.png" />
     <None Include="Resources\estrella2.png" />
     <None Include="Resources\estrella1.png" />

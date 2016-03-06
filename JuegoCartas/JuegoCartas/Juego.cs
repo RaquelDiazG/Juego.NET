@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace Juego
 {
@@ -16,6 +17,7 @@ namespace Juego
         private int numColumnas;
         private Tablero tablero;
         private Button[,] botones;
+        private SoundPlayer player;
 
         public Juego(int filas, int columnas)
         {
@@ -32,6 +34,11 @@ namespace Juego
             //Autoajustar la ventana
             this.AutoSize = true;
             this.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+
+            //Sonido
+            player = new SoundPlayer(@"C:\Users\raque\Downloads\Angel-voice\Angel-voice.wav");
+            player.PlayLooping();
+            btn_musica.Tag = "sonidoOn";
 
             //Inicializamos las variables
             tablero = new Tablero(numFilas, numColumnas);
@@ -153,6 +160,29 @@ namespace Juego
         {
             botones[i,j].Image = null;
             botones[i,j].BackColor = Color.WhiteSmoke;
+        }
+
+        private void btn_repetir_Click(object sender, EventArgs e)
+        {
+            Juego nuevo=new Juego(numFilas, numColumnas);
+            nuevo.Show();
+            this.Dispose();
+        }
+
+        private void btn_musica_Click(object sender, EventArgs e)
+        {
+            if (btn_musica.Tag.ToString() == "sonidoOn")
+            {
+                player.Stop();
+                btn_musica.Image = global::JuegoCartas.Properties.Resources.sonidoOff;
+                btn_musica.Tag = "sonidoOff";
+            }
+            else
+            {
+                player.PlayLooping();
+                btn_musica.Image = global::JuegoCartas.Properties.Resources.sonidoOn;
+                btn_musica.Tag = "sonidoOn";
+            }
         }
     }
 }
