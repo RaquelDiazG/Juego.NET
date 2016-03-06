@@ -14,15 +14,18 @@ namespace Juego
         private int filas;
         private int columnas;
         public int puntos { get; set; }
-        private int tiempo;
+        public int tiempo { get; set; }
         public string palabra { get; set; }
         private int posicion;
         private int minLetras;
         private int maxLetras;
+        public bool finPartida { get; set; }
 
         public Tablero(int f, int c)
         {
             //Iniciamos las variables
+            tiempo = 0;
+            finPartida = false;
             filas = f;
             columnas = c;
             posicion = 0;
@@ -67,7 +70,7 @@ namespace Juego
                     }
                 }
             }
-
+            
         }
 
         private bool insertarLetra(Random aleatorio, string letra)
@@ -144,7 +147,7 @@ namespace Juego
         {
             posicion++;
             //comprobamos si ha ganado
-            if (posicion == palabra.Length)
+            if (haGanado())
             {
                 GuardarPuntuacion form=new GuardarPuntuacion(puntos, tiempo);
                 form.Show();
@@ -160,6 +163,10 @@ namespace Juego
         {
             puntos++;
         }
-
+        public Boolean haGanado()
+        {
+            finPartida = (posicion == palabra.Length);
+            return finPartida;
+        }
     }
 }

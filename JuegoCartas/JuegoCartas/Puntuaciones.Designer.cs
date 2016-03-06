@@ -30,15 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.movimientosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tiempoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.puntuacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bDDataSet = new JuegoCartas.BDDataSet();
             this.puntuacionesTableAdapter = new JuegoCartas.BDDataSetTableAdapters.PuntuacionesTableAdapter();
             this.btn_volver = new System.Windows.Forms.Button();
             this.txt_puntuaciones = new System.Windows.Forms.Label();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.movimientosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tiempoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.puntuacionesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bDDataSet)).BeginInit();
@@ -61,6 +61,35 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(345, 150);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // movimientosDataGridViewTextBoxColumn
+            // 
+            this.movimientosDataGridViewTextBoxColumn.DataPropertyName = "Movimientos";
+            this.movimientosDataGridViewTextBoxColumn.HeaderText = "Movimientos";
+            this.movimientosDataGridViewTextBoxColumn.Name = "movimientosDataGridViewTextBoxColumn";
+            this.movimientosDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tiempoDataGridViewTextBoxColumn
+            // 
+            this.tiempoDataGridViewTextBoxColumn.DataPropertyName = "Tiempo";
+            this.tiempoDataGridViewTextBoxColumn.HeaderText = "Tiempo";
+            this.tiempoDataGridViewTextBoxColumn.Name = "tiempoDataGridViewTextBoxColumn";
+            this.tiempoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // puntuacionesBindingSource
             // 
@@ -96,35 +125,6 @@
             this.txt_puntuaciones.Size = new System.Drawing.Size(118, 20);
             this.txt_puntuaciones.TabIndex = 2;
             this.txt_puntuaciones.Text = "Puntuaciones";
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // movimientosDataGridViewTextBoxColumn
-            // 
-            this.movimientosDataGridViewTextBoxColumn.DataPropertyName = "Movimientos";
-            this.movimientosDataGridViewTextBoxColumn.HeaderText = "Movimientos";
-            this.movimientosDataGridViewTextBoxColumn.Name = "movimientosDataGridViewTextBoxColumn";
-            this.movimientosDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tiempoDataGridViewTextBoxColumn
-            // 
-            this.tiempoDataGridViewTextBoxColumn.DataPropertyName = "Tiempo";
-            this.tiempoDataGridViewTextBoxColumn.HeaderText = "Tiempo";
-            this.tiempoDataGridViewTextBoxColumn.Name = "tiempoDataGridViewTextBoxColumn";
-            this.tiempoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Puntuaciones
             // 

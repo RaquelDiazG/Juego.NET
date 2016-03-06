@@ -18,6 +18,7 @@ namespace Juego
         private Tablero tablero;
         private Button[,] botones;
         private SoundPlayer player;
+        private int segundos=0;
 
         public Juego(int filas, int columnas)
         {
@@ -44,6 +45,10 @@ namespace Juego
             tablero = new Tablero(numFilas, numColumnas);
             botones = new Button[numFilas, numColumnas];
 
+            //Iniciamos el contador de tiempo
+            timer.Enabled = true;
+            timer.Start();
+
             //Mostramos la palabra
             label1.Text = tablero.palabra;
 
@@ -60,7 +65,7 @@ namespace Juego
             //Asignamos el numero de filas y columnas
             this.tableLayoutPanel1.RowCount = numFilas;
             this.tableLayoutPanel1.ColumnCount = numColumnas;
-
+            
             //Rellenamos el layout con botones creados dinamicamente
             for (int i = 0; i < numFilas; i++)
             {
@@ -182,6 +187,20 @@ namespace Juego
                 player.PlayLooping();
                 btn_musica.Image = global::JuegoCartas.Properties.Resources.sonidoOn;
                 btn_musica.Tag = "sonidoOn";
+            }
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            if (tablero.finPartida)
+            {
+                timer.Stop();
+            }
+            else
+            {
+                segundos++;
+                label_tiempo.Text = Convert.ToString(segundos);
+                tablero.tiempo = segundos;
             }
         }
     }
