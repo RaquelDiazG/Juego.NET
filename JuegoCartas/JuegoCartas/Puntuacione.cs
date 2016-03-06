@@ -16,7 +16,7 @@ namespace JuegoCartas
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
-        public Nullable<int> Puntos { get; set; }
         public Nullable<int> Tiempo { get; set; }
+        public Nullable<int> Movimientos { get; set; }
     }
 }

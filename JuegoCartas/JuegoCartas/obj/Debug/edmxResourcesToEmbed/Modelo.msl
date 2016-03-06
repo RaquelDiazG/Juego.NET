@@ -14,9 +14,9 @@
     <EntitySetMapping Name="Puntuaciones">
       <EntityTypeMapping TypeName="BDModelo.Puntuacione">
         <MappingFragment StoreEntitySet="Puntuaciones">
+          <ScalarProperty Name="Movimientos" ColumnName="Movimientos" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-          <ScalarProperty Name="Puntos" ColumnName="Puntos" />
           <ScalarProperty Name="Tiempo" ColumnName="Tiempo" />
         </MappingFragment>
       </EntityTypeMapping>

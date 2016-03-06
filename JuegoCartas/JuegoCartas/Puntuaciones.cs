@@ -24,8 +24,8 @@ namespace JuegoCartas
             this.CenterToScreen();
             // Carga datos en la tabla 'bDDataSet.Puntuaciones'
             this.puntuacionesTableAdapter.Fill(this.bDDataSet.Puntuaciones);
-            // Ordenar los datos por la columna de puntos
-            this.dataGridView1.Sort(this.puntosDataGridViewTextBoxColumn, ListSortDirection.Ascending);
+            // Ordenar los datos por la columna de movimientos
+            this.dataGridView1.Sort(this.movimientosDataGridViewTextBoxColumn, ListSortDirection.Ascending);
         }
 
         private void btn_volver_Click(object sender, EventArgs e)

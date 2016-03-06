@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BDModelo.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="BDModelo.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Palabras">
           <Key>
             <PropertyRef Name="Id" />
@@ -20,15 +20,14 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="100" />
-          <Property Name="Puntos" Type="int" />
+          <Property Name="Movimientos" Type="int" />
           <Property Name="Tiempo" Type="int" />
         </EntityType>
         <EntityContainer Name="BDModeloStoreContainer">
           <EntitySet Name="Palabras" EntityType="Self.Palabras" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Puntuaciones" EntityType="Self.Puntuaciones" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BDModelo" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -47,8 +46,8 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Puntos" Type="Int32" />
           <Property Name="Tiempo" Type="Int32" />
+          <Property Name="Movimientos" Type="Int32" />
         </EntityType>
         <EntityContainer Name="BDEntidades" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Palabras" EntityType="Self.Palabra" />
@@ -73,9 +72,9 @@
           <EntitySetMapping Name="Puntuaciones">
             <EntityTypeMapping TypeName="BDModelo.Puntuacione">
               <MappingFragment StoreEntitySet="Puntuaciones">
+                <ScalarProperty Name="Movimientos" ColumnName="Movimientos" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Puntos" ColumnName="Puntos" />
                 <ScalarProperty Name="Tiempo" ColumnName="Tiempo" />
               </MappingFragment>
             </EntityTypeMapping>

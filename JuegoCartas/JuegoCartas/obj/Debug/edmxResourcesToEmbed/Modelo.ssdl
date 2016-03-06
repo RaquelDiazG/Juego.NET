@@ -15,7 +15,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nombre" Type="varchar" MaxLength="100" />
-    <Property Name="Puntos" Type="int" />
+    <Property Name="Movimientos" Type="int" />
     <Property Name="Tiempo" Type="int" />
   </EntityType>
   <EntityContainer Name="BDModeloStoreContainer">

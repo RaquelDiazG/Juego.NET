@@ -47,7 +47,7 @@ namespace Juego
             //Mostramos la palabra
             label1.Text = tablero.palabra;
 
-            //Mostramos los puntos
+            //Mostramos los movimientos
             label2.Text = "0";
 
             //Limpiamos los controles existentes
