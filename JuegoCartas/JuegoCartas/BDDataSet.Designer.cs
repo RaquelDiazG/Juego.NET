@@ -287,6 +287,8 @@ namespace JuegoCartas {
             
             private global::System.Data.DataColumn columnMovimientos;
             
+            private global::System.Data.DataColumn columnNivel;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public PuntuacionesDataTable() {
@@ -354,6 +356,14 @@ namespace JuegoCartas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NivelColumn {
+                get {
+                    return this.columnNivel;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -389,13 +399,14 @@ namespace JuegoCartas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PuntuacionesRow AddPuntuacionesRow(string Nombre, int Tiempo, int Movimientos) {
+            public PuntuacionesRow AddPuntuacionesRow(string Nombre, int Tiempo, int Movimientos, string Nivel) {
                 PuntuacionesRow rowPuntuacionesRow = ((PuntuacionesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Nombre,
                         Tiempo,
-                        Movimientos};
+                        Movimientos,
+                        Nivel};
                 rowPuntuacionesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPuntuacionesRow);
                 return rowPuntuacionesRow;
@@ -429,6 +440,7 @@ namespace JuegoCartas {
                 this.columnNombre = base.Columns["Nombre"];
                 this.columnTiempo = base.Columns["Tiempo"];
                 this.columnMovimientos = base.Columns["Movimientos"];
+                this.columnNivel = base.Columns["Nivel"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -442,6 +454,8 @@ namespace JuegoCartas {
                 base.Columns.Add(this.columnTiempo);
                 this.columnMovimientos = new global::System.Data.DataColumn("Movimientos", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMovimientos);
+                this.columnNivel = new global::System.Data.DataColumn("Nivel", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNivel);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -451,6 +465,7 @@ namespace JuegoCartas {
                 this.columnId.ReadOnly = true;
                 this.columnId.Unique = true;
                 this.columnNombre.MaxLength = 100;
+                this.columnNivel.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -652,6 +667,22 @@ namespace JuegoCartas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Nivel {
+                get {
+                    try {
+                        return ((string)(this[this.tablePuntuaciones.NivelColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Nivel\' de la tabla \'Puntuaciones\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePuntuaciones.NivelColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsNombreNull() {
                 return this.IsNull(this.tablePuntuaciones.NombreColumn);
             }
@@ -684,6 +715,18 @@ namespace JuegoCartas {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetMovimientosNull() {
                 this[this.tablePuntuaciones.MovimientosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNivelNull() {
+                return this.IsNull(this.tablePuntuaciones.NivelColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNivelNull() {
+                this[this.tablePuntuaciones.NivelColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -850,10 +893,11 @@ namespace JuegoCartas.BDDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Nombre", "Nombre");
             tableMapping.ColumnMappings.Add("Tiempo", "Tiempo");
             tableMapping.ColumnMappings.Add("Movimientos", "Movimientos");
+            tableMapping.ColumnMappings.Add("Nivel", "Nivel");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Puntuaciones] WHERE (([Id] = @Original_Id) AND ((@IsNull_Nombre = 1 AND [Nombre] IS NULL) OR ([Nombre] = @Original_Nombre)) AND ((@IsNull_Movimientos = 1 AND [Movimientos] IS NULL) OR ([Movimientos] = @Original_Movimientos)) AND ((@IsNull_Tiempo = 1 AND [Tiempo] IS NULL) OR ([Tiempo] = @Original_Tiempo)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Puntuaciones] WHERE (([Id] = @Original_Id) AND ((@IsNull_Nombre = 1 AND [Nombre] IS NULL) OR ([Nombre] = @Original_Nombre)) AND ((@IsNull_Movimientos = 1 AND [Movimientos] IS NULL) OR ([Movimientos] = @Original_Movimientos)) AND ((@IsNull_Tiempo = 1 AND [Tiempo] IS NULL) OR ([Tiempo] = @Original_Tiempo)) AND ((@IsNull_Nivel = 1 AND [Nivel] IS NULL) OR ([Nivel] = @Original_Nivel)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Nombre", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -862,23 +906,27 @@ namespace JuegoCartas.BDDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Movimientos", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Movimientos", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Tiempo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tiempo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tiempo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tiempo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Nivel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nivel", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nivel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nivel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Puntuaciones] ([Nombre], [Movimientos], [Tiempo]) VALUES (@Nom" +
-                "bre, @Movimientos, @Tiempo);\r\nSELECT Id, Nombre, Movimientos, Tiempo FROM Puntua" +
-                "ciones WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Puntuaciones] ([Nombre], [Movimientos], [Tiempo], [Nivel]) VAL" +
+                "UES (@Nombre, @Movimientos, @Tiempo, @Nivel);\r\nSELECT Id, Nombre, Movimientos, T" +
+                "iempo, Nivel FROM Puntuaciones WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Movimientos", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Movimientos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tiempo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tiempo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nivel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nivel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Puntuaciones] SET [Nombre] = @Nombre, [Movimientos] = @Movimientos, [Tiempo] = @Tiempo WHERE (([Id] = @Original_Id) AND ((@IsNull_Nombre = 1 AND [Nombre] IS NULL) OR ([Nombre] = @Original_Nombre)) AND ((@IsNull_Movimientos = 1 AND [Movimientos] IS NULL) OR ([Movimientos] = @Original_Movimientos)) AND ((@IsNull_Tiempo = 1 AND [Tiempo] IS NULL) OR ([Tiempo] = @Original_Tiempo)));
-SELECT Id, Nombre, Movimientos, Tiempo FROM Puntuaciones WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Puntuaciones] SET [Nombre] = @Nombre, [Movimientos] = @Movimientos, [Tiempo] = @Tiempo, [Nivel] = @Nivel WHERE (([Id] = @Original_Id) AND ((@IsNull_Nombre = 1 AND [Nombre] IS NULL) OR ([Nombre] = @Original_Nombre)) AND ((@IsNull_Movimientos = 1 AND [Movimientos] IS NULL) OR ([Movimientos] = @Original_Movimientos)) AND ((@IsNull_Tiempo = 1 AND [Tiempo] IS NULL) OR ([Tiempo] = @Original_Tiempo)) AND ((@IsNull_Nivel = 1 AND [Nivel] IS NULL) OR ([Nivel] = @Original_Nivel)));
+SELECT Id, Nombre, Movimientos, Tiempo, Nivel FROM Puntuaciones WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Movimientos", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Movimientos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tiempo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tiempo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nivel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nivel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Nombre", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -886,6 +934,8 @@ SELECT Id, Nombre, Movimientos, Tiempo FROM Puntuaciones WHERE (Id = @Id)";
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Movimientos", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Movimientos", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Tiempo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tiempo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tiempo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tiempo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Nivel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nivel", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nivel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nivel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -902,7 +952,7 @@ SELECT Id, Nombre, Movimientos, Tiempo FROM Puntuaciones WHERE (Id = @Id)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Nombre, Movimientos, Tiempo FROM dbo.Puntuaciones";
+            this._commandCollection[0].CommandText = "SELECT Id, Nombre, Movimientos, Tiempo, Nivel FROM dbo.Puntuaciones";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -963,7 +1013,7 @@ SELECT Id, Nombre, Movimientos, Tiempo FROM Puntuaciones WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, string Original_Nombre, global::System.Nullable<int> Original_Movimientos, global::System.Nullable<int> Original_Tiempo) {
+        public virtual int Delete(int Original_Id, string Original_Nombre, global::System.Nullable<int> Original_Movimientos, global::System.Nullable<int> Original_Tiempo, string Original_Nivel) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             if ((Original_Nombre == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -989,6 +1039,14 @@ SELECT Id, Nombre, Movimientos, Tiempo FROM Puntuaciones WHERE (Id = @Id)";
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
+            if ((Original_Nivel == null)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Nivel));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1009,7 +1067,7 @@ SELECT Id, Nombre, Movimientos, Tiempo FROM Puntuaciones WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Nombre, global::System.Nullable<int> Movimientos, global::System.Nullable<int> Tiempo) {
+        public virtual int Insert(string Nombre, global::System.Nullable<int> Movimientos, global::System.Nullable<int> Tiempo, string Nivel) {
             if ((Nombre == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1027,6 +1085,12 @@ SELECT Id, Nombre, Movimientos, Tiempo FROM Puntuaciones WHERE (Id = @Id)";
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Nivel == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Nivel));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1048,7 +1112,7 @@ SELECT Id, Nombre, Movimientos, Tiempo FROM Puntuaciones WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Nombre, global::System.Nullable<int> Movimientos, global::System.Nullable<int> Tiempo, int Original_Id, string Original_Nombre, global::System.Nullable<int> Original_Movimientos, global::System.Nullable<int> Original_Tiempo, int Id) {
+        public virtual int Update(string Nombre, global::System.Nullable<int> Movimientos, global::System.Nullable<int> Tiempo, string Nivel, int Original_Id, string Original_Nombre, global::System.Nullable<int> Original_Movimientos, global::System.Nullable<int> Original_Tiempo, string Original_Nivel, int Id) {
             if ((Nombre == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1067,32 +1131,46 @@ SELECT Id, Nombre, Movimientos, Tiempo FROM Puntuaciones WHERE (Id = @Id)";
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_Id));
-            if ((Original_Nombre == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            if ((Nivel == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_Nombre));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Nivel));
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_Id));
+            if ((Original_Nombre == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Nombre));
             }
             if ((Original_Movimientos.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Movimientos.Value));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Movimientos.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             if ((Original_Tiempo.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Tiempo.Value));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Tiempo.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Id));
+            if ((Original_Nivel == null)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Nivel));
+            }
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1113,8 +1191,8 @@ SELECT Id, Nombre, Movimientos, Tiempo FROM Puntuaciones WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Nombre, global::System.Nullable<int> Movimientos, global::System.Nullable<int> Tiempo, int Original_Id, string Original_Nombre, global::System.Nullable<int> Original_Movimientos, global::System.Nullable<int> Original_Tiempo) {
-            return this.Update(Nombre, Movimientos, Tiempo, Original_Id, Original_Nombre, Original_Movimientos, Original_Tiempo, Original_Id);
+        public virtual int Update(string Nombre, global::System.Nullable<int> Movimientos, global::System.Nullable<int> Tiempo, string Nivel, int Original_Id, string Original_Nombre, global::System.Nullable<int> Original_Movimientos, global::System.Nullable<int> Original_Tiempo, string Original_Nivel) {
+            return this.Update(Nombre, Movimientos, Tiempo, Nivel, Original_Id, Original_Nombre, Original_Movimientos, Original_Tiempo, Original_Nivel, Original_Id);
         }
     }
     
