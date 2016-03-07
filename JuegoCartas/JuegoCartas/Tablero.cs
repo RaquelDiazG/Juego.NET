@@ -11,6 +11,7 @@ namespace Juego
     class Tablero
     {
         private Carta[,] cartas;
+        private string nivel;
         private int filas;
         private int columnas;
         public int puntos { get; set; }
@@ -21,11 +22,12 @@ namespace Juego
         private int maxLetras;
         public bool finPartida { get; set; }
 
-        public Tablero(int f, int c)
+        public Tablero(int f, int c, string nivel)
         {
             //Iniciamos las variables
             tiempo = 0;
             finPartida = false;
+            this.nivel = nivel;
             filas = f;
             columnas = c;
             posicion = 0;
@@ -149,7 +151,7 @@ namespace Juego
             //comprobamos si ha ganado
             if (haGanado())
             {
-                GuardarPuntuacion form=new GuardarPuntuacion(puntos, tiempo);
+                GuardarPuntuacion form=new GuardarPuntuacion(nivel, puntos, tiempo);
                 form.Show();
             }
            

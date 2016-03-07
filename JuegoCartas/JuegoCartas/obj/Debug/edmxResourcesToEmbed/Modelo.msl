@@ -2,7 +2,7 @@
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="BDModeloStoreContainer" CdmEntityContainer="BDEntidades">
     <EntitySetMapping Name="Palabras">
-      <EntityTypeMapping TypeName="BDModelo.Palabra">
+      <EntityTypeMapping TypeName="IsTypeOf(BDModelo.Palabra)">
         <MappingFragment StoreEntitySet="Palabras">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Original" ColumnName="Original" />
@@ -12,12 +12,13 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Puntuaciones">
-      <EntityTypeMapping TypeName="BDModelo.Puntuacione">
+      <EntityTypeMapping TypeName="IsTypeOf(BDModelo.Puntuacione)">
         <MappingFragment StoreEntitySet="Puntuaciones">
-          <ScalarProperty Name="Movimientos" ColumnName="Movimientos" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
           <ScalarProperty Name="Tiempo" ColumnName="Tiempo" />
+          <ScalarProperty Name="Movimientos" ColumnName="Movimientos" />
+          <ScalarProperty Name="Nivel" ColumnName="Nivel" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

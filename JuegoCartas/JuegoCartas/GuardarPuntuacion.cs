@@ -12,12 +12,14 @@ namespace JuegoCartas
 {
     public partial class GuardarPuntuacion : Form
     {
+        private string nivel;
         private int movimientos;
         private int tiempo;
 
-        public GuardarPuntuacion(int movimientos, int tiempo)
+        public GuardarPuntuacion(string nivel, int movimientos, int tiempo)
         {
             InitializeComponent();
+            this.nivel = nivel;
             this.movimientos = movimientos;
             this.tiempo = tiempo;
             //Centrar en la pantalla
@@ -36,6 +38,7 @@ namespace JuegoCartas
             puntuacion.Nombre = usuario;
             puntuacion.Movimientos = movimientos;
             puntuacion.Tiempo = tiempo;
+            puntuacion.Nivel = nivel;
 
             //Guardar puntuacion en BBDD
             entidades.Puntuaciones.Add(puntuacion);

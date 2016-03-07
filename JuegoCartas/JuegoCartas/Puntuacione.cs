@@ -18,5 +18,6 @@ namespace JuegoCartas
         public string Nombre { get; set; }
         public Nullable<int> Tiempo { get; set; }
         public Nullable<int> Movimientos { get; set; }
+        public string Nivel { get; set; }
     }
 }

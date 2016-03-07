@@ -15,16 +15,18 @@ namespace Juego
     {
         private int numFilas;
         private int numColumnas;
+        private string nivel;
         private Tablero tablero;
         private Button[,] botones;
         private SoundPlayer player;
         private int segundos=0;
 
-        public Juego(int filas, int columnas)
+        public Juego(int filas, int columnas, string nivel)
         {
             InitializeComponent();
-            numFilas = filas;
-            numColumnas = columnas;
+            this.numFilas = filas;
+            this.numColumnas = columnas;
+            this.nivel = nivel;
         }
 
         private void Juego_Load(object sender, EventArgs e)
@@ -42,7 +44,7 @@ namespace Juego
             btn_musica.Tag = "sonidoOn";
 
             //Inicializamos las variables
-            tablero = new Tablero(numFilas, numColumnas);
+            tablero = new Tablero(numFilas, numColumnas,nivel);
             botones = new Button[numFilas, numColumnas];
 
             //Iniciamos el contador de tiempo
@@ -169,7 +171,7 @@ namespace Juego
 
         private void btn_repetir_Click(object sender, EventArgs e)
         {
-            Juego nuevo=new Juego(numFilas, numColumnas);
+            Juego nuevo=new Juego(numFilas, numColumnas,nivel);
             nuevo.Show();
             this.Dispose();
         }
