@@ -205,5 +205,10 @@ namespace Juego
                 tablero.tiempo = segundos;
             }
         }
+
+        private void Juego_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            player.Stop();
+        }
     }
 }

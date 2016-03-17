@@ -174,6 +174,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Juego";
             this.Text = "Memoria del revés";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Juego_FormClosing);
             this.Load += new System.EventHandler(this.Juego_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
