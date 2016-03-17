@@ -173,7 +173,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Juego";
-            this.Text = "Juego";
+            this.Text = "Memoria del revés";
             this.Load += new System.EventHandler(this.Juego_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

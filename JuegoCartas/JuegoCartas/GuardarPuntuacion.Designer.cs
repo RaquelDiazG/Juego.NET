@@ -84,7 +84,7 @@
             this.Controls.Add(this.nombre);
             this.Controls.Add(this.label1);
             this.Name = "GuardarPuntuacion";
-            this.Text = "GuardarPuntuacion";
+            this.Text = "Memoria del revés";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -30,22 +30,22 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btn_puntuaciones = new System.Windows.Forms.Button();
             this.btn_medio = new System.Windows.Forms.Button();
             this.btn_facil = new System.Windows.Forms.Button();
             this.btn_dificil = new System.Windows.Forms.Button();
+            this.btn_puntuaciones = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(68, 22);
+            this.label1.Font = new System.Drawing.Font("Hobo Std", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(24, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 20);
+            this.label1.Size = new System.Drawing.Size(240, 30);
             this.label1.TabIndex = 0;
-            this.label1.Text = "NOMBRE JUEGO";
+            this.label1.Text = "MEMORIA DEL REVÉS";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel1
@@ -65,20 +65,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 76F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(260, 76);
             this.tableLayoutPanel1.TabIndex = 4;
-            // 
-            // btn_puntuaciones
-            // 
-            this.btn_puntuaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_puntuaciones.Image = global::JuegoCartas.Properties.Resources.medalla;
-            this.btn_puntuaciones.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_puntuaciones.Location = new System.Drawing.Point(96, 175);
-            this.btn_puntuaciones.Name = "btn_puntuaciones";
-            this.btn_puntuaciones.Size = new System.Drawing.Size(103, 74);
-            this.btn_puntuaciones.TabIndex = 5;
-            this.btn_puntuaciones.Text = "Puntuaciones";
-            this.btn_puntuaciones.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_puntuaciones.UseVisualStyleBackColor = true;
-            this.btn_puntuaciones.Click += new System.EventHandler(this.btn_puntuaciones_Click);
             // 
             // btn_medio
             // 
@@ -122,6 +108,20 @@
             this.btn_dificil.UseVisualStyleBackColor = true;
             this.btn_dificil.Click += new System.EventHandler(this.btn_dificil_Click);
             // 
+            // btn_puntuaciones
+            // 
+            this.btn_puntuaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_puntuaciones.Image = global::JuegoCartas.Properties.Resources.medalla;
+            this.btn_puntuaciones.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_puntuaciones.Location = new System.Drawing.Point(96, 175);
+            this.btn_puntuaciones.Name = "btn_puntuaciones";
+            this.btn_puntuaciones.Size = new System.Drawing.Size(103, 74);
+            this.btn_puntuaciones.TabIndex = 5;
+            this.btn_puntuaciones.Text = "Puntuaciones";
+            this.btn_puntuaciones.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_puntuaciones.UseVisualStyleBackColor = true;
+            this.btn_puntuaciones.Click += new System.EventHandler(this.btn_puntuaciones_Click);
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -132,7 +132,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label1);
             this.Name = "Inicio";
-            this.Text = "Inicio";
+            this.Text = "Memoria del revés";
             this.Load += new System.EventHandler(this.Inicio_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
