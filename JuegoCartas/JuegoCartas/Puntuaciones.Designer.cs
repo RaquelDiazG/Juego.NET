@@ -58,10 +58,11 @@
             this.tiempoDataGridViewTextBoxColumn,
             this.Nivel});
             this.dataGridView1.DataSource = this.puntuacionesBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 78);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 96);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(444, 171);
+            this.dataGridView1.Size = new System.Drawing.Size(446, 210);
             this.dataGridView1.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn
@@ -114,9 +115,10 @@
             // 
             this.txt_puntuaciones.AutoSize = true;
             this.txt_puntuaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_puntuaciones.Location = new System.Drawing.Point(192, 21);
+            this.txt_puntuaciones.Location = new System.Drawing.Point(186, 24);
+            this.txt_puntuaciones.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txt_puntuaciones.Name = "txt_puntuaciones";
-            this.txt_puntuaciones.Size = new System.Drawing.Size(118, 20);
+            this.txt_puntuaciones.Size = new System.Drawing.Size(143, 25);
             this.txt_puntuaciones.TabIndex = 2;
             this.txt_puntuaciones.Text = "Puntuaciones";
             // 
@@ -124,9 +126,10 @@
             // 
             this.btn_volver.Image = global::JuegoCartas.Properties.Resources.volver;
             this.btn_volver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_volver.Location = new System.Drawing.Point(32, 13);
+            this.btn_volver.Location = new System.Drawing.Point(43, 16);
+            this.btn_volver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_volver.Name = "btn_volver";
-            this.btn_volver.Size = new System.Drawing.Size(40, 38);
+            this.btn_volver.Size = new System.Drawing.Size(53, 47);
             this.btn_volver.TabIndex = 1;
             this.btn_volver.UseVisualStyleBackColor = true;
             this.btn_volver.Click += new System.EventHandler(this.btn_volver_Click);
@@ -137,13 +140,14 @@
             // 
             // Puntuaciones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(468, 261);
+            this.ClientSize = new System.Drawing.Size(479, 321);
             this.Controls.Add(this.txt_puntuaciones);
             this.Controls.Add(this.btn_volver);
             this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Puntuaciones";
             this.Text = "Memoria del revés";
             this.Load += new System.EventHandler(this.Puntuaciones_Load);
