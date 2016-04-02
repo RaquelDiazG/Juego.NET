@@ -102,7 +102,7 @@
             // timer
             // 
             this.timer.Interval = 1000;
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            this.timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
             // label_tiempo
             // 
@@ -132,7 +132,7 @@
             this.btn_repetir.Size = new System.Drawing.Size(35, 35);
             this.btn_repetir.TabIndex = 7;
             this.btn_repetir.UseVisualStyleBackColor = true;
-            this.btn_repetir.Click += new System.EventHandler(this.btn_repetir_Click);
+            this.btn_repetir.Click += new System.EventHandler(this.Btn_repetir_Click);
             // 
             // btn_musica
             // 
@@ -142,7 +142,7 @@
             this.btn_musica.Size = new System.Drawing.Size(40, 41);
             this.btn_musica.TabIndex = 6;
             this.btn_musica.UseVisualStyleBackColor = true;
-            this.btn_musica.Click += new System.EventHandler(this.btn_musica_Click);
+            this.btn_musica.Click += new System.EventHandler(this.Btn_musica_Click);
             // 
             // btn_volver
             // 
@@ -154,7 +154,7 @@
             this.btn_volver.TabIndex = 3;
             this.btn_volver.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_volver.UseVisualStyleBackColor = true;
-            this.btn_volver.Click += new System.EventHandler(this.btn_volver_Click);
+            this.btn_volver.Click += new System.EventHandler(this.Btn_volver_Click);
             // 
             // Juego
             // 

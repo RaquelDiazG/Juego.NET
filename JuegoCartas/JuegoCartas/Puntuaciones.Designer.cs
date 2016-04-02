@@ -132,7 +132,7 @@
             this.btn_volver.Size = new System.Drawing.Size(53, 47);
             this.btn_volver.TabIndex = 1;
             this.btn_volver.UseVisualStyleBackColor = true;
-            this.btn_volver.Click += new System.EventHandler(this.btn_volver_Click);
+            this.btn_volver.Click += new System.EventHandler(this.Btn_volver_Click);
             // 
             // puntuacionesTableAdapter
             // 

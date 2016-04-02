@@ -26,7 +26,7 @@ namespace JuegoCartas
             this.CenterToScreen();
         }
 
-        private void btn_guardar_puntuacion_Click(object sender, EventArgs e)
+        private void Btn_guardar_puntuacion_Click(object sender, EventArgs e)
         {
             string usuario = nombre.Text;
 

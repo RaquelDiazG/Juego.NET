@@ -32,28 +32,28 @@ namespace Juego
             this.AutoSizeMode = AutoSizeMode.GrowAndShrink;
         }
 
-        private void btn_facil_Click(object sender, EventArgs e)
+        private void Btn_facil_Click(object sender, EventArgs e)
         {
             Juego form=new Juego(facil, facil,"Fácil");
             form.Show();
             this.Hide();
         }
 
-        private void btn_medio_Click(object sender, EventArgs e)
+        private void Btn_medio_Click(object sender, EventArgs e)
         {
             Juego form = new Juego(medio, medio,"Medio");
             form.Show();
             this.Hide();
         }
 
-        private void btn_dificil_Click(object sender, EventArgs e)
+        private void Btn_dificil_Click(object sender, EventArgs e)
         {
             Juego form = new Juego(dificil, dificil,"Difícil");
             form.Show();
             this.Hide();
         }
 
-        private void btn_puntuaciones_Click(object sender, EventArgs e)
+        private void Btn_puntuaciones_Click(object sender, EventArgs e)
         {
             Puntuaciones form = new Puntuaciones();
             form.Show();

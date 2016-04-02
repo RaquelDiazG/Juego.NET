@@ -78,8 +78,8 @@ namespace Juego
                     this.tableLayoutPanel1.Controls.Add(botones[i, j],i,j);
 
                     //asociamos dos controladores de eventos para cada boton
-                    botones[i, j].MouseUp += new MouseEventHandler(this.mouseUp);
-                    botones[i, j].MouseDown += new MouseEventHandler(this.mouseDown);
+                    botones[i, j].MouseUp += new MouseEventHandler(this.MouseUp);
+                    botones[i, j].MouseDown += new MouseEventHandler(this.MouseDown);
 
                     //cambiamos el tamaño del boton
                     botones[i, j].Width = 80;
@@ -89,37 +89,37 @@ namespace Juego
                     botones[i, j].Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
                     //añadimos las imagenes a los botones
-                    ponerImagenCarta(i, j);
+                    PonerImagenCarta(i, j);
 
                 }
             }
-            actualizaIU();
+            ActualizaIU();
         }
 
-        private void mouseDown(object sender, EventArgs e)
+        private void MouseDown(object sender, EventArgs e)
         {
             //MessageBox.Show("["+((MiBoton)sender).f+ "," + ((MiBoton)sender).c+ "]");
             //mostramos la carta
-            tablero.mostrarCarta(((MiBoton)sender).f, ((MiBoton)sender).c);
-            quitarImagenCarta(((MiBoton)sender).f, ((MiBoton)sender).c);
+            tablero.MostrarCarta(((MiBoton)sender).f, ((MiBoton)sender).c);
+            QuitarImagenCarta(((MiBoton)sender).f, ((MiBoton)sender).c);
             //aumentamos los puntos
-            tablero.aumentarPuntos();
+            tablero.AumentarPuntos();
             label2.Text = tablero.puntos.ToString();
             //actualizamos el tablero
-            actualizaIU();
+            ActualizaIU();
         }
 
-        private void mouseUp(object sender, EventArgs e)
+        private void MouseUp(object sender, EventArgs e)
         {
             //comprobamos si la carta que se levanta coincide con la siguiente letra de la palabra
-            if (tablero.coincidePosicionPalabra(((MiBoton)sender).f, ((MiBoton)sender).c))
+            if (tablero.CoincidePosicionPalabra(((MiBoton)sender).f, ((MiBoton)sender).c))
             {
                 //mostramos la carta
-                tablero.mostrarCarta(((MiBoton)sender).f, ((MiBoton)sender).c);
+                tablero.MostrarCarta(((MiBoton)sender).f, ((MiBoton)sender).c);
                 //deshabilitamos el boton
                 ((MiBoton)sender).Enabled = false;
                 //aumentamos el contador para identificar la siguiente letra
-                tablero.aumentarPosicion();
+                tablero.AumentarPosicion();
             }
             else {
                 //ocultamos todas las cartas y habilitamos todos los botones
@@ -128,29 +128,29 @@ namespace Juego
                     for (int j = 0; j < numColumnas; j++)
                     {
                         botones[i, j].Enabled = true;
-                        tablero.ocultarCarta(i, j);
-                        ponerImagenCarta(i, j);
+                        tablero.OcultarCarta(i, j);
+                        PonerImagenCarta(i, j);
                     }
                 }
                 //reseteamos el contador
-                tablero.resetearPosicion();
+                tablero.ResetearPosicion();
             }
-            actualizaIU();
+            ActualizaIU();
         }
 
-        public void actualizaIU()
+        public void ActualizaIU()
         {
             for (int f = 0; f < numFilas; f++)
             {
                 for (int c = 0; c < numColumnas; c++)
                 {
                     //Texto en el boton
-                    botones[f, c].Text = tablero.queHayEn(f, c);
+                    botones[f, c].Text = tablero.QueHayEn(f, c);
                 }
             }
         }
 
-        private void btn_volver_Click(object sender, EventArgs e)
+        private void Btn_volver_Click(object sender, EventArgs e)
         {
             this.Hide();
             Inicio inicio = new Inicio();
@@ -158,25 +158,25 @@ namespace Juego
         }
 
 
-        private void ponerImagenCarta(int i, int j)
+        private void PonerImagenCarta(int i, int j)
         {
             botones[i, j].Image = global::JuegoCartas.Properties.Resources.mosaico;
         }
 
-        private void quitarImagenCarta(int i, int j)
+        private void QuitarImagenCarta(int i, int j)
         {
             botones[i,j].Image = null;
             botones[i,j].BackColor = Color.WhiteSmoke;
         }
 
-        private void btn_repetir_Click(object sender, EventArgs e)
+        private void Btn_repetir_Click(object sender, EventArgs e)
         {
             Juego nuevo=new Juego(numFilas, numColumnas,nivel);
             nuevo.Show();
             this.Dispose();
         }
 
-        private void btn_musica_Click(object sender, EventArgs e)
+        private void Btn_musica_Click(object sender, EventArgs e)
         {
             if (btn_musica.Tag.ToString() == "sonidoOn")
             {
@@ -192,7 +192,7 @@ namespace Juego
             }
         }
 
-        private void timer_Tick(object sender, EventArgs e)
+        private void Timer_Tick(object sender, EventArgs e)
         {
             if (tablero.finPartida)
             {

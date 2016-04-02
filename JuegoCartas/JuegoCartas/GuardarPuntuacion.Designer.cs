@@ -71,7 +71,7 @@
             this.btn_guardar_puntuacion.Text = "Guardar";
             this.btn_guardar_puntuacion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_guardar_puntuacion.UseVisualStyleBackColor = true;
-            this.btn_guardar_puntuacion.Click += new System.EventHandler(this.btn_guardar_puntuacion_Click);
+            this.btn_guardar_puntuacion.Click += new System.EventHandler(this.Btn_guardar_puntuacion_Click);
             // 
             // GuardarPuntuacion
             // 

@@ -78,7 +78,7 @@
             this.btn_medio.Text = "Medio";
             this.btn_medio.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_medio.UseVisualStyleBackColor = true;
-            this.btn_medio.Click += new System.EventHandler(this.btn_medio_Click);
+            this.btn_medio.Click += new System.EventHandler(this.Btn_medio_Click);
             // 
             // btn_facil
             // 
@@ -92,7 +92,7 @@
             this.btn_facil.Text = "Fácil";
             this.btn_facil.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_facil.UseVisualStyleBackColor = true;
-            this.btn_facil.Click += new System.EventHandler(this.btn_facil_Click);
+            this.btn_facil.Click += new System.EventHandler(this.Btn_facil_Click);
             // 
             // btn_dificil
             // 
@@ -106,7 +106,7 @@
             this.btn_dificil.Text = "Difícil";
             this.btn_dificil.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_dificil.UseVisualStyleBackColor = true;
-            this.btn_dificil.Click += new System.EventHandler(this.btn_dificil_Click);
+            this.btn_dificil.Click += new System.EventHandler(this.Btn_dificil_Click);
             // 
             // btn_puntuaciones
             // 
@@ -120,7 +120,7 @@
             this.btn_puntuaciones.Text = "Puntuaciones";
             this.btn_puntuaciones.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_puntuaciones.UseVisualStyleBackColor = true;
-            this.btn_puntuaciones.Click += new System.EventHandler(this.btn_puntuaciones_Click);
+            this.btn_puntuaciones.Click += new System.EventHandler(this.Btn_puntuaciones_Click);
             // 
             // Inicio
             // 

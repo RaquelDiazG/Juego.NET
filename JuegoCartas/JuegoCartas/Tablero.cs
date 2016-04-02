@@ -43,7 +43,7 @@ namespace Juego
             cartas = new Carta[f, c];
 
             //Recuperamos una palabra de BBDD
-            palabra = getPalabraBBDD();
+            palabra = GetPalabraBBDD();
 
              //Introducimos las letras de la palabra en el tablero
             Random aleatorio = new Random();
@@ -52,7 +52,7 @@ namespace Juego
                 bool insertada = false;
                 do
                 {
-                    insertada = insertarLetra(aleatorio, palabra[i].ToString());
+                    insertada = InsertarLetra(aleatorio, palabra[i].ToString());
                 }
                 while (!insertada);
             }
@@ -62,7 +62,7 @@ namespace Juego
             {
                 for (int j = 0; j < columnas; j++)
                 {
-                    if (!hayCarta(i, j))
+                    if (!HayCarta(i, j))
                     { 
                         string letra_auxiliar = "♬";
                         if (!palabra.Contains(letra_auxiliar))
@@ -75,11 +75,11 @@ namespace Juego
             
         }
 
-        private bool insertarLetra(Random aleatorio, string letra)
+        private bool InsertarLetra(Random aleatorio, string letra)
         {
             int fila_aleatoria = aleatorio.Next(filas);
             int columna_aleatoria = aleatorio.Next(columnas);
-            if (!hayCarta(fila_aleatoria, columna_aleatoria))
+            if (!HayCarta(fila_aleatoria, columna_aleatoria))
             {
                 cartas[fila_aleatoria, columna_aleatoria] = new Carta(letra);
                 return true;
@@ -90,7 +90,7 @@ namespace Juego
             }
         }
 
-        public void visualizar()
+        public void Visualizar()
         {
             for (int i = 1; i < filas - 1; i++)
             {
@@ -102,17 +102,17 @@ namespace Juego
             }
         }
 
-        public void mostrarCarta(int f, int c)
+        public void MostrarCarta(int f, int c)
         {
             cartas[f, c].mostrar();
         }
 
-        public void ocultarCarta(int f, int c)
+        public void OcultarCarta(int f, int c)
         {
             cartas[f, c].ocultar();
         }
 
-        private string getPalabraBBDD()
+        private string GetPalabraBBDD()
         {
             //Conexion a BBDD
             BDEntidades entidades = new BDEntidades();
@@ -128,44 +128,46 @@ namespace Juego
             return palabras.Skip(aleatorio).First();
         }
 
-        private bool hayCarta(int filas, int columnas)
+        private bool HayCarta(int filas, int columnas)
         {
             return (cartas[filas, columnas] != null);
         }
 
-        public string queHayEn(int f, int c)
+        public string QueHayEn(int f, int c)
 	    {
 	        return cartas[f, c].ToString();
 	    }
 
-        public bool coincidePosicionPalabra(int f, int c)
+        public bool CoincidePosicionPalabra(int f, int c)
         {
             string letra = cartas[f, c].ToString();
             int posicion_palabra = palabra.IndexOf(letra);
             return posicion==posicion_palabra;
         }
 
-        public void aumentarPosicion()
+        public void AumentarPosicion()
         {
             posicion++;
             //comprobamos si ha ganado
-            if (haGanado())
+            if (HaGanado())
             {
                 GuardarPuntuacion form=new GuardarPuntuacion(nivel, puntos, tiempo);
                 form.Show();
             }
            
         }
-        public void resetearPosicion()
+
+        public void ResetearPosicion()
         {
             posicion = 0;
         }
 
-        public void aumentarPuntos()
+        public void AumentarPuntos()
         {
             puntos++;
         }
-        public Boolean haGanado()
+
+        public Boolean HaGanado()
         {
             finPartida = (posicion == palabra.Length);
             return finPartida;
