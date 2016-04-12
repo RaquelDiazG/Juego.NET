@@ -1,4 +1,5 @@
-# Memoria del revés
+# Máster en Ingeniería Web 
+## Memoria del revés
 - Desarrollado en .NET
 - Juego de memoria que consiste en levantar las cartas de un tablero en el orden adecuado para formar una palabra
 - Contiene una BBDD de 55.000 palabras
@@ -7,3 +8,5 @@
 - Se pueden ver todas las puntuaciones
 - Añadida música y botón para silenciarla
 - URL del vídeo demo: https://youtu.be/2_P2PViFDgk
+
+![UPM](http://www.upm.es/estaticos/imagenes/comunes/universidad_politecnica_logoI.png) 
